@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Calculation {
+  id        Int      @id @default(autoincrement())
+  operation String
+  input     String
+  result    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+} 
